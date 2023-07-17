@@ -23,6 +23,8 @@ class ItemData(val originalValue: Any?) {
     //En menos espacio que en Java, se realiza la funcion getInfo gracias al When Statement.
     fun getInfo(): String? {
         return when (originalValue) {
+
+            //String Template para la respuesta por si es un String
             is String -> "L${originalValue.length}"
 
             /*
@@ -35,6 +37,9 @@ class ItemData(val originalValue: Any?) {
                 originalValue % 2 == 0 -> "M2"
                 else -> null
             }
+
+            //Especificaciones por si orginalValue es un boleaano
+            //Mas entendible que en Java
             is Boolean -> if (originalValue) "Verdadero"
                 else "Falso"
             else -> null
